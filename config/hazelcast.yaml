@@ -1,0 +1,24 @@
+hazelcast:
+  network:
+    join:
+      multicast:
+        enabled: false
+      discovery-strategies:
+        discovery-strategies:
+          - class: 'org.bitsofinfo.hazelcast.discovery.consul.ConsulDiscoveryStrategy'
+            enabled: true
+            properties:
+              consul-host: localhost
+              consul-port: 8500
+              consul-service-name: hazelcast
+              consul-healthy-only: true
+              consul-service-tags: hazelcast
+              consul-discovery-delay-ms: 10000
+              consul-acl-token: ''
+              consul-ssl-enabled: false
+              consul-ssl-server-cert-file-path: ''
+              consul-ssl-server-cert-base64: ''
+              consul-ssl-server-hostname-verify: ''
+              consul-registrator: 'org.bitsofinfo.hazelcast.discovery.consul.DoNothingRegistrator'
+              consul-registrator-config: ''
+              
